@@ -1,0 +1,28 @@
+{
+  "name": "a02-functions-ineal23",
+  "version": "1.0.0",
+  "description": "This assignment will help you learn to create an installable Node.js command line utility.",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "galosh.js": "./cli.js"
+},
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/a02-functions-ineal23.git"
+  },
+  "author": "Isaiah",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a02-functions-ineal23/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/a02-functions-ineal23#readme",
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "moment-timezone": "^0.5.41",
+    "node-fetch": "^3.3.1"
+  }
+}
