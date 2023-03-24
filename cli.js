@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import minimist from "minimist";
-import moment from "moment-timezone";
-import fetch from "node-fetch";
+import minimist from 'minimist';
+import moment from 'moment-timezone';
+import fetch from 'node-fetch';
 
 const args = minimist(process.argv.slice(2));
 
@@ -17,11 +17,11 @@ if (args.h) {
 }
 
 const help = args.h;
-const timezone = args.z ? args[args.indexOf('-z') + 1] : moment.tz.guess();
-const lat = args.n ? args[args.indexOf('-n') + 1] : (args.s ? args[args.indexOf('-s') + 1] * -1 : null);
-const lg = args.e ? args[args.indexOf('-e') + 1] : (args.w ? args[args.indexOf('-w') + 1] * -1 : null);
+const timezone = args.z ? args.z : moment.tz.guess();
+const lat = args.n ? parseFloat(args.n).toFixed(2) : (args.s ? parseFloat(args.s * -1).toFixed(2) : null);
+const lg = args.e ? parseFloat(args.e).toFixed(2) : (args.w ? parseFloat(args.w * -1).toFixed(2) : null);
 const json = args.j;
-const day = args.d ? parseInt(args[args.indexOf('-d') + 1]) : 1;
+const day = args.d ? parseInt(args.d) : 1;
 
 const URL = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lg}&daily=precipitation_hours&current_weather=true&timezone=${timezone}`;
 
